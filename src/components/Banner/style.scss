@@ -1,3 +1,5 @@
+@import '../../styles/mixin/variables';
+@import '../../styles/mixin/mixins';
 .banner-container {
 	height: 111px;
 	@include small-radius;
