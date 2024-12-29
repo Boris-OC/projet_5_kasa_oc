@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import logementsData from './data/logements.json';
-import LogementCard from './LogementCard'; // Assurez-vous que LogementCard est bien importé
+import logementsData from '../../data/logements.json';
+import LogementCard from '../../components/LogementCard'; // Assurez-vous que LogementCard est bien importé
 
 function LogementPage() {
   const { id } = useParams(); // Utilisation de useParams pour récupérer l'ID du logement depuis l'URL
