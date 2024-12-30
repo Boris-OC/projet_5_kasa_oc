@@ -1,17 +1,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import '../mixin/variables.scss';  // Assure-toi que ce chemin est correct pour importer les variables
+@import '../mixin/mixins.scss';
 
+// Réinitialisation des marges et paddings pour tous les éléments
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
 
+// Assure-toi que le body occupe toute la largeur de la page sans marges
 body {
-  @include body-position;
-  max-width: 100%; /* Removed media query */
+  margin: 0;  // Retirer les marges par défaut
+  padding: 0;  // Retirer les paddings par défaut
+  width: 100%;  // Assure que le body prend toute la largeur de la page
+  font-family: "Montserrat", sans-serif;  // Applique la police globale
 }
 
+// Garde les marges spécifiques pour main, si nécessaire
 main {
-  margin: 5%; /* Removed media query */
+  margin: 5%;  // Garde cette règle si tu veux des marges spécifiques pour main
+  
+  // Ajuste les marges pour les écrans plus larges
+  @media screen and (min-width: $breakpoint-desktop) {
+    margin: 0 100px;
+  }
+}
+
+// Style pour le footer
+footer {
+  width: 100%;  // Assure que le footer prend 100% de la largeur de la page
+  background-color: $footer-color;  // Applique la couleur de fond du footer
+  box-sizing: border-box;  // Inclut les bordures et paddings dans la largeur totale
 }
 
 .redFont {
@@ -37,5 +58,8 @@ main {
 .wh-msk {
   background: $secondary-color;
   @include small-radius;
-  @include big-radius; /* Applied big-radius for all screen sizes */
+
+  @media screen and (min-width: $breakpoint-desktop) {
+    @include big-radius;
+  }
 }

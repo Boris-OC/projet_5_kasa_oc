@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Banner from "../../components/Banner";
 import Card from "../../components/Cards"; // Assurez-vous que le chemin est correct
-import Footer from "../../components/Footer";
 import homeBanner from "../../assets/banner/homeBanner.png"; // L'image de la bannière
 import logementsData from "../../data/logements.json"; // Importer les données JSON directement
 
@@ -21,15 +20,12 @@ const HomePage = () => {
           {logementsData.map((appart, id) => (
             <div className="card_logement" key={id}>
               <Link className="link_card_logement" to={`/logement/${appart.id}`}>
-                {/* Modifier 'cover' en 'image' */}
                 <Card image={appart.cover} title={appart.title} />
               </Link>
             </div>
           ))}
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 };
