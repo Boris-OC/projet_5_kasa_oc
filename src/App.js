@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import LogementPage from './pages/LogementPage';
-import NotFoundPage from './pages/NotFoundPage';
+import ErrorPage from './pages/ErrorPage';
 import Header from './components/Header';
 import ErrorBoundary from './components/ErrorBoundary';
 import Footer from './components/Footer';
@@ -22,7 +22,7 @@ function App() {
               <Route path="/accueil" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/logement/:id" element={<LogementPage />} />
-              <Route path="*" element={<NotFoundPage />} />
+              <Route path="*" element={<ErrorPage />} />
             </Routes>
           </ErrorBoundary>
         </main>
