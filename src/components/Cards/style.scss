@@ -1,0 +1,81 @@
+@import "../../styles/mixin/mixins"; 
+@import "../../styles/mixin/variables";
+
+// Style de la carte
+.card-logement {
+    position: relative;
+    display: flex;
+    width: 335px;
+    height: 255px;
+    @include small-radius;
+    min-width: 335px;
+    transition: transform 1s;
+
+    @media screen and (min-width: $breakpoint-desktop) {
+        width: 340px;
+        height: 340px;
+
+        &:hover,
+        &:focus {
+            @include boxShadow;
+        }
+    }
+
+    // Style de l'image
+    & img {
+        display: block;             /* Assurez-vous que l'image prend toute la largeur */
+        width: 100%;                /* Largeur à 100% du conteneur */
+        height: 100%;               /* Hauteur à 100% du conteneur */
+        object-fit: cover;          /* S'assurer que l'image occupe toute la zone sans déformation */
+        @include small-radius;      /* Inclure un petit rayon si nécessaire */
+    }
+
+    // Couche superposée au bas de l'image
+    &__layer {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        background: $linear-cards;   /* Vous pouvez changer la couleur de fond ici */
+        @include WH-full;           /* Remplir la zone */
+        @include small-radius;
+    }
+
+    // Titre de la carte
+    &__title {
+        display: flex;
+        align-items: flex-end;
+        position: absolute;
+        @include font(18px, 500);
+        color: #f1f1f1;
+        left: 5.88%;
+        right: 5.88%;
+        top: 78.82%;
+        bottom: 5.88%;
+    }
+}
+
+// Container des cartes
+.cards-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+    @include small-radius;
+    margin: 22px 0;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: $breakpoint-desktop) {
+        gap: 50px;
+        padding: 5% 1%;
+        background-color: #f7f7f7;
+        @include big-radius;
+        margin: 43px 0;
+    }
+}
+
+// Lien pour la carte
+.link_card_logement {
+    text-decoration: none;
+}
+
