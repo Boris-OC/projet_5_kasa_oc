@@ -1,4 +1,4 @@
-// src/components/ErrorBoundary/index.jsx
+
 import React, { Component } from 'react';
 
 class ErrorBoundary extends Component {

@@ -1,8 +1,8 @@
 import React from 'react';
-import './style.scss'; // Assurez-vous que le chemin du fichier SCSS est correct
+import './style.scss'; 
 
 export default function Card({ image, title }) {
-  console.log("Card props:", { image, title }); // Vérification des valeurs des props
+  console.log("Card props:", { image, title }); 
 
   return (
     <article className="card-logement">

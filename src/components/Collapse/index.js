@@ -1,13 +1,24 @@
-import React, { useState } from 'react'; // Ajout de l'import de useState
+import React, { useState, useRef, useEffect } from 'react'; // Ajout de useRef et useEffect
 import Chevron from "../../assets/vectorBas.svg";
 import './styles.scss'; 
 
 export default function Collapse(props) {
   const [toggle, setToggle] = useState(false);
+  const contentRef = useRef(null); // Référence pour le contenu
 
   const toggleState = () => {
     setToggle(!toggle);
   };
+
+  useEffect(() => {
+    if (toggle && contentRef.current) {
+      // Définir la hauteur dynamique lorsque le contenu est ouvert
+      contentRef.current.style.maxHeight = `${contentRef.current.scrollHeight}px`;
+    } else if (contentRef.current) {
+      // Réinitialiser la hauteur lorsque le contenu est fermé
+      contentRef.current.style.maxHeight = "0px";
+    }
+  }, [toggle]);
 
   return (
     <div className={`collapse ${props.aboutStyle}`}>
@@ -20,10 +31,11 @@ export default function Collapse(props) {
         />
       </div>
       <div
-        className={toggle ? "collapse__toggle animated" : "collapse__toggle"}
-        style={{ height: toggle ? "auto" : "0px" }}
+        ref={contentRef} // Référence au conteneur
+        className={`collapse__toggle ${toggle ? "is-open" : ""}`}
+        aria-hidden={!toggle}
       >
-        <p aria-hidden={toggle ? "true" : "false"}>{props.aboutText}</p>
+        <p>{props.aboutText}</p>
       </div>
     </div>
   );

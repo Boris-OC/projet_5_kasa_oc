@@ -23,11 +23,11 @@
 
     // Style de l'image
     & img {
-        display: block;             /* Assurez-vous que l'image prend toute la largeur */
-        width: 100%;                /* Largeur à 100% du conteneur */
-        height: 100%;               /* Hauteur à 100% du conteneur */
-        object-fit: cover;          /* S'assurer que l'image occupe toute la zone sans déformation */
-        @include small-radius;      /* Inclure un petit rayon si nécessaire */
+        display: block;             
+        width: 100%;                
+        height: 100%;               
+        object-fit: cover;          
+        @include small-radius;     
     }
 
     // Couche superposée au bas de l'image

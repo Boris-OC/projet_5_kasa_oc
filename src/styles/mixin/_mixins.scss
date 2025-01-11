@@ -68,3 +68,37 @@
 @mixin big-radius {
     border-radius: 25px;
 }
+
+@mixin rightArrow-style {
+    display: flex;
+    position: absolute;
+    top: 47%;
+    right: 2%;
+    width: 12px;
+    height: 20px;
+    z-index: 10;
+    cursor: pointer;
+
+    @media screen and (min-width: $breakpoint-desktop) {
+        width: 47px;
+        height: 79px;
+        top: 42%;
+    }
+}
+
+@mixin leftArrow-style {
+    display: flex;
+    position: absolute;
+    top: 47%;
+    left: 2%;
+    width: 12px;
+    height: 20px;
+    z-index: 10;
+    cursor: pointer;
+
+    @media screen and (min-width: $breakpoint-desktop) {
+        width: 47px;
+        height: 79px;
+        top: 42%;
+    }
+}

@@ -1,4 +1,5 @@
-@import "../../styles/mixin/variables";
+@import '../../styles/mixin/variables';
+@import '../../styles/mixin/mixins';
 .nav-header {
 	@include flex-end;
 	text-transform: uppercase;
