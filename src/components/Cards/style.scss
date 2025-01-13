@@ -36,8 +36,8 @@
         align-items: center;
         position: absolute;
         bottom: 0;
-        background: $linear-cards;   /* Vous pouvez changer la couleur de fond ici */
-        @include WH-full;           /* Remplir la zone */
+        background: $linear-cards;   
+        @include WH-full;           
         @include small-radius;
     }
 

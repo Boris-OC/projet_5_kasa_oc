@@ -1,6 +1,5 @@
-// src/components/Nav.js
 import React from 'react';
-import { Link } from 'react-router-dom';  // Assurez-vous que cette ligne est présente
+import { Link } from 'react-router-dom';  
 
 export default function Nav() {
 	return (

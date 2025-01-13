@@ -6,7 +6,7 @@ export default function Card({ image, title }) {
 
   return (
     <article className="card-logement">
-      {/* Vérification de l'image */}
+      {}
       <img src={image} alt={title} className="card-img" />
       
       <div className="card-logement__layer">

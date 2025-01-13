@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Banner from "../../components/Banner";
-import Card from "../../components/Cards"; // Assurez-vous que le chemin est correct
-import homeBanner from "../../assets/banner/homeBanner.png"; // L'image de la bannière
-import logementsData from "../../data/logements.json"; // Importer les données JSON directement
+import Card from "../../components/Cards"; 
+import homeBanner from "../../assets/banner/homeBanner.png"; 
+import logementsData from "../../data/logements.json"; 
 
 const HomePage = () => {
   // Vérification des données
