@@ -14,53 +14,62 @@
   }
 }
 
+.slides-container {
+  display: flex;
+  transition: transform 0.5s ease; // Transition pour le glissement des slides
+  width: 100%; // Assurer que la largeur couvre tout le carrousel
+}
+
 .slider {
   @include WH-full;
   position: absolute;
-  left: 0%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
-  @include small-radius;
-  opacity: 0;
-  transition: opacity ease-in-out 0.6s;  //petit effet d'apparition progressive de l'image dans le slide
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0; // Par défaut, les slides sont invisibles
+  transition: opacity 0.6s ease-in-out; // Effet d'apparition progressive de l'image dans le slide
 
   @media screen and (min-width: $breakpoint-desktop) {
       @include big-radius;
   }
 
   & img {
-      @include WH-full;
-      object-fit: cover;
-      position: absolute;
-      left: 0%;
-      right: 0%;
-      top: 0%;
-      bottom: 0%;
-      mix-blend-mode: normal;
-      @include small-radius;
+    @include WH-full;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    mix-blend-mode: normal;
+    @include small-radius;
 
-      @media screen and (min-width: $breakpoint-desktop) {
-          @include big-radius;
-      }
+    @media screen and (min-width: $breakpoint-desktop) {
+      @include big-radius;
+    }
   }
 
   &__number {
-      display: none;
+    display: none;
 
-      @media screen and (min-width: $breakpoint-desktop) {
-          display: block;
-          position: absolute;
-          @include font(18px, 500);
-          color: $tertiary-color;
-          left: 48%;
-          top: 86%;
-      }
+    @media screen and (min-width: $breakpoint-desktop) {
+      display: block;
+      position: absolute;
+      @include font(18px, 500);
+      color: $tertiary-color;
+      left: 48%;
+      top: 86%;
+    }
   }
 }
 
 .active-anim {
-  opacity: 1;
+  opacity: 1; // Le slide actif devient visible
+}
+
+.slide-out {
+  opacity: 0; // Transition de sortie pour un slide qui disparaît
 }
 
 .rightArrow {
